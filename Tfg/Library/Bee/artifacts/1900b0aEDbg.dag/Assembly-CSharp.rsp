@@ -351,8 +351,9 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/Unity.VSCode.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
-"Assets/celestial.cs"
-"Assets/SolarSystem.cs"
+"Assets/Scripts/Physic_Scripts/celestial.cs"
+"Assets/Scripts/Physic_Scripts/SolarSystem.cs"
+"Assets/Scripts/Physic_Scripts/System_Generator.cs"
 -langversion:9.0
 
 /deterministic
