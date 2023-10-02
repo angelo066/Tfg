@@ -36,7 +36,21 @@ public class System_Generator : MonoBehaviour
     [SerializeField]
     private float[] planet_Radious;
     [SerializeField]
-    private float[] planet_Masses;   
+    private float[] planet_Masses;
+
+    /// <summary>
+    /// Information of satelites for each planet
+    /// </summary>
+    [SerializeField]
+    private int[] satelites;
+    [SerializeField]
+    private int[] satelites_Distances;
+    [SerializeField]
+    private int[] satelites_Rads;
+    [SerializeField]
+    private int[] satelites_Masses;
+    [SerializeField]
+    GameObject moon;
 
     //Mininum habitable distance with Sun  = 1200 (Unity units)
     //Maximum distance with Sun = 2000(Unity units)
@@ -70,7 +84,9 @@ public class System_Generator : MonoBehaviour
             //Change mass according to user input
             g.GetComponent<Rigidbody>().mass = planet_Masses[i];
 
+
             setMaterials(i, g);
+
         }
     }
 
