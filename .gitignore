@@ -70,3 +70,22 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Tfg/Library/ArtifactDB
+Tfg/Library/ArtifactDB
+Tfg/Library/Artifacts/05/05004629eb055fe7c1594c163d81c485
+Tfg/Library/Artifacts/0e/0e7e44de22943bb79a0d28c84bfd89fc
+Tfg/Library/Artifacts/10/101c7b03a2c36f9db96e8602d96c076b
+*.json
+Tfg/Library/Artifacts/33/33bb943afc5ae74356ccdf9d584697f1
+Tfg/Library/Artifacts/3b/3b7814478e59025700b7be70e80d16ff
+Tfg/Library/Artifacts/3e/3e44bc06190ebe6f489c5e58011b7d78
+*.dag
+*.dag_derived
+*.dag_fsmtime
+Tfg/Library/Artifacts/40/4094c58b603ea71f84c6d9955adf054b
+*.json
+*.mvfrm
+*.mvfrm
+*.outputdata
+*.dag_fsmtime
+*.dag_derived
