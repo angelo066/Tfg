@@ -172,3 +172,13 @@ Tfg/Temp/__Backupscenes/0.backup
 Tfg/Temp/FSTimeGet-635e2b6af7b14444a914ca26da9a55da
 Tfg/Temp/UnityLockfile
 Tfg/Temp/workerlic
+Tfg/Library/ArtifactDB
+*.traceevents
+*.json
+*.digestcache
+*.map
+*.asset
+Tfg/Library/SourceAssetDB
+*.log
+Tfg/Temp/FSTimeGet-5a91b52923cdf6e42993916047917cff
+Tfg/Library/ArtifactDB
