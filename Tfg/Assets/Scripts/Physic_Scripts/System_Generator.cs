@@ -36,18 +36,7 @@ public class System_Generator : MonoBehaviour
     [SerializeField]
     private float[] planet_Radious;
     [SerializeField]
-    private float[] planet_Masses;
-
-    /// <summary>
-    /// Every array is relative to planet
-    /// </summary>
-    //number of satelites that we want in each planet (first number correspond to first planet in distances array)
-    [SerializeField]
-    private int[] satelites;
-    [SerializeField]
-    private int[] satelites_Distances;
-    [SerializeField]
-    private int[] satelites_Rads;
+    private float[] planet_Masses;   
 
     //Mininum habitable distance with Sun  = 1200 (Unity units)
     //Maximum distance with Sun = 2000(Unity units)
