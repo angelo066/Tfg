@@ -46,11 +46,10 @@ public class System_Generator : MonoBehaviour
     [SerializeField]
     private int[] satelites_Distances;
     [SerializeField]
-    private int[] satelites_Rads;
+    private float[] satelites_Rads;
     [SerializeField]
-    private int[] satelites_Masses;
-    [SerializeField]
-    GameObject moon;
+    private float[] satelites_Masses;
+
 
     //Mininum habitable distance with Sun  = 1200 (Unity units)
     //Maximum distance with Sun = 2000(Unity units)
@@ -70,6 +69,7 @@ public class System_Generator : MonoBehaviour
 
     private void generatePlanets()
     {
+        int last_index = 0; //Tracks the satelite information
         //Generate planets
         for (int i = 0; i < N_Planets; i++)
         {
@@ -87,7 +87,38 @@ public class System_Generator : MonoBehaviour
 
             setMaterials(i, g);
 
+            //Generation of satelites
+            last_index = generateSatelites(last_index, i, g);
         }
+    }
+
+    private int generateSatelites(int last_index, int i, GameObject g)
+    {
+        int n_satelites = satelites[i];
+
+        int[] positions = new int[n_satelites];
+        float[] masses = new float[n_satelites];
+        float[] rads = new float[n_satelites];
+
+        int p;
+        for (p = 0; p < n_satelites; p++)
+        {
+            positions[p] = satelites_Distances[last_index + p];
+            masses[p] = satelites_Masses[last_index + p];
+            rads[p] = satelites_Rads[last_index + p];
+
+        }
+        last_index += p;
+
+        Satelite_Generator sat_Gen = g.GetComponent<Satelite_Generator>();
+
+        sat_Gen.satelites = n_satelites;
+        sat_Gen.satelites_Dist = positions;
+        sat_Gen.satelites_Masses = masses;
+        sat_Gen.satelites_Rads = rads;
+
+        sat_Gen.Generate();
+        return last_index;
     }
 
     private void setMaterials(int i, GameObject g)
@@ -141,12 +172,12 @@ public class System_Generator : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
 
     void Update()
     {
-        
+
     }
 }
