@@ -170,14 +170,4 @@ public class System_Generator : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-
-    }
-
-
-    void Update()
-    {
-
-    }
 }
