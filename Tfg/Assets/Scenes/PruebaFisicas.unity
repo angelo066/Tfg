@@ -911,6 +911,7 @@ GameObject:
   - component: {fileID: 982930447}
   - component: {fileID: 982930448}
   - component: {fileID: 982930449}
+  - component: {fileID: 982930450}
   m_Layer: 0
   m_Name: SolarSystem
   m_TagString: Untagged
@@ -1001,6 +1002,18 @@ MonoBehaviour:
   - 20
   - 30
   - 40
+--- !u!114 &982930450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 982930446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dc3f033ea23d7f4a8685eb6b321d0a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1022643410
 GameObject:
   m_ObjectHideFlags: 0

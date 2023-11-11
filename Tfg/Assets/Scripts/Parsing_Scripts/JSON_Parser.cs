@@ -12,18 +12,12 @@ public class JSON_Parser : MonoBehaviour
     int n_planets;
     int[] sateliteNumbers;
 
-    Planet[] planets;
+    Planet_Information[] planets;
 
     // Start is called before the first frame update
     void Start()
     {
         LoadJson(FileName);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     /*
@@ -37,20 +31,82 @@ public class JSON_Parser : MonoBehaviour
         if (File.Exists(file))
         {
             StreamReader sr = new StreamReader(FileName);
-            string line;
-            line = parseNumberOfPlanets(sr);
+            parseNumberOfPlanets(sr);
+            planets = new Planet_Information[n_planets];
 
-            planets = new Planet[n_planets];
+            sr.ReadLine(); //Remove "Planets"
+            sr.ReadLine(); //Remove "{"
+            for(int i=0; i < n_planets; i++)
+            {
+                planets[i] = new Planet_Information(); //Initizalitation of the information class
+                string line = sr.ReadLine();
 
+                ParseName(i, line);
+
+                sr.ReadLine(); //Remove "Characteristics"
+
+                line = sr.ReadLine();
+
+                ParseSurface(i, line);
+
+                line = sr.ReadLine();
+
+                ParseTemperatura(i, line);
+
+                //ParseResources
+
+                line = sr.ReadLine(); //Remove "},"
+
+                line = sr.ReadLine();
+
+                ParseSatelites(i, line);
+
+                sr.ReadLine(); //Remover "},"
+                sr.ReadLine(); //Remover "{"
+            }
+            sr.ReadLine(); //Remover "],"
         }
         else
         {
             Debug.LogError("Path doesn´t exist");
         }
+
+        Debug.Log("Debug");
         
     }
 
-    private string parseNumberOfPlanets(StreamReader sr)
+    private void ParseSatelites(int i, string line)
+    {
+        string[] parameterSplit = line.Split(":");
+
+        planets[i].satelites = int.Parse(parameterSplit[1]);
+    }
+
+    private void ParseTemperatura(int i, string line)
+    {
+        string[] parameterSplit = line.Split(":");
+
+        planets[i].car.temperature = parameterSplit[1];
+    }
+
+    private void ParseSurface(int i, string line)
+    {
+        string[] parameterSplit = line.Split(":");
+        string[] valueSplit = parameterSplit[1].Split(",");
+
+        planets[i].car.surface = valueSplit[0];
+    }
+
+    private void ParseName(int i, string line)
+    {
+        string[] parameterSplit = line.Split(":"); //We split the value from the parameter
+        string[] valueSplit = parameterSplit[1].Split(","); //We split the value from the , character 
+
+        planets[i].Name = valueSplit[0]; // name of the planet 
+        Debug.Log(planets[i].Name);
+    }
+
+    private void parseNumberOfPlanets(StreamReader sr)
     {
         string line;
         sr.ReadLine();   //We remove the first character ({)
@@ -62,6 +118,5 @@ public class JSON_Parser : MonoBehaviour
 
 
         n_planets = int.Parse(secondSplit[0]);
-        return line;
     }
 }
