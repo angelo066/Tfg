@@ -10,14 +10,14 @@ public class celestial : MonoBehaviour
 
     public void report()
     {
-        SolarSystem.instance.reportCelestial(gameObject);
+        SolarSystem_Physics.instance.reportCelestial(gameObject);
         reported = true;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        if(!reported)SolarSystem.instance.reportCelestial(gameObject);
+        if(!reported) SolarSystem_Physics.instance.reportCelestial(gameObject);
     }
 
     // Update is called once per frame
